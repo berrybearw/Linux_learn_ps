@@ -1,7 +1,8 @@
 Linux ps 顯示的 stat 簡介
 
 参考来源资讯 : https://unix.stackexchange.com/questions/18474/what-does-this-process-stat-indicates
-
+<details>
+<summary>介紹</summary>
 状态
 
 D (uninterruptible sleep) - 在不可中断的休眠中 (一般为正在进行输入/输出) 通常是 IO
@@ -46,3 +47,19 @@ S<l  /usr/bin/pulseaudio --start
 Ss   oracletopprd (LOCAL=NO)
 
 Ssl  /usr/libexec/upowerd
+</details>
+<details>
+<summary>排序</summary>
+預設是從小開始
+
+—sort= 指令加 - 會反向 
+
+原本 —sort ( 0 , 1 , 2 ... ) 
+反向 —sort=- ( 99 , 98 ... )
+
+系統上最耗費記憶體的程式
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+
+這行指令可利用 ps 指令列出行程的一些基本資訊，
+按照每個行程所使用的記憶體排序後，列出排名最前面的幾個行程
+</details>
