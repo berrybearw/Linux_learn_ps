@@ -1,4 +1,3 @@
-# Linux_learn
 Linux ps 顯示的 stat 簡介
 ====
 参考来源资讯 : https://unix.stackexchange.com/questions/18474/what-does-this-process-stat-indicates
